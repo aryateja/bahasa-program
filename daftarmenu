@@ -1,0 +1,54 @@
+import java.util.*;
+class daftarmenu{
+	public static void main (String[]args){
+		Scanner sc=new Scanner(System.in);
+		
+		String[]menu={"tahu-tek","Gado-gado","Nasi krengsengan","Nasi pecel","bakso"};
+		int[]harga={10000,8000,12000,9000,7000};
+		String nota="";
+		int subtotal=0;
+		int total=0;
+		System.out.println("========================================");
+		System.out.println("         \"Daftar Menu Makanan\"        ");
+		System.out.println("========================================");
+		System.out.println("Makanan \t\tHarga");
+		System.out.println("========================================");
+		
+		for(int i=0; i<menu.length;i++){
+			System.out.println((i+1) + "." + menu[i]+"\t\t"+harga[i]);
+		}
+		String jawab="iya";
+		while(jawab.equalsIgnoreCase("iya")){
+			System.out.println();
+				System.out.print("Masukkan pilihan : ");
+				int pilih=sc.nextInt();
+				System.out.println();
+				System.out.println(menu[pilih-1]);
+				System.out.println();
+				
+				System.out.print("Masukkan Jumlah Pesanan : ");
+				int a=sc.nextInt();
+				System.out.println("Harga : "+harga[pilih-1]);
+				subtotal=harga[pilih-1]*a;
+				System.out.println("Bayar : "+subtotal);
+				System.out.println();
+				
+				nota+=menu[pilih-1]+"\t\t"+a+" Porsi\t\t"+harga[pilih-1]+"\t\t"+subtotal+"\n-----------------------------------------------------------------\n";
+				total+=subtotal;
+				System.out.println("Pesan lagi?[iya/tidak]");
+				jawab=sc.next();	
+				System.out.println();
+		}
+				System.out.println("=================================================================");
+				System.out.println("\t\tNota");
+				System.out.println("=================================================================");
+				System.out.println("MENU \t\t\tJUMLAH \t\t HARGA \t\t SUBTOTAL");
+				System.out.println("-----------------------------------------------------------------");
+				System.out.println(nota);
+				System.out.println("=================================================================");
+				System.out.println("Total bayar : "+total);
+				System.out.println("=================================================================");
+				System.out.println("Trima kasih kunjungan anda");
+		
+	}
+}
