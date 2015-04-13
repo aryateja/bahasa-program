@@ -1,0 +1,67 @@
+import java.io.*;
+public class tiketPesawat{
+	public static void main (String[]args) throws IOException
+	{BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		//header
+		System.out.println("=======================================");
+		System.out.println("         Data Tiket Pesawat            ");
+		System.out.println("=======================================");
+		System.out.println();
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("|	KodePenerbangan |     Rute         | harga      | Pesawat   |");
+		System.out.println("|	1.SBY-JKT       | Surabaya-jakarta | Rp 500000  | Air Asia  |");
+		System.out.println("|	1.SMP-JKT       | Sumenep-jakarta  | Rp 900000  | Air Asia  |");
+		System.out.println("|	1.BLI-JKT       | Bali-jakarta     | Rp 700000  | Air Asia  |");
+		System.out.println("|	1.SBY-BLI       | Surabaya-Bali    | Rp 500000  | Air Asia  |");
+		System.out.println("---------------------------------------------------------------------");
+		//inputan nama
+		System.out.print("Masukan Nama Depan :");
+		String namadepan = br.readLine();
+		//inputan belakang
+		System.out.print("Masukan Nama Belakang :");
+		String namabelakang = br.readLine();
+		//usia
+		System.out.print("Usia Anda :");
+		String usia = br.readLine();
+		//inputan jenis pesawat
+		System.out.print("pesawat :");
+		String pesawat = br.readLine();
+		//rute
+		System.out.print("rute :");
+		String rute = br.readLine();
+		//harga
+		System.out.print("harga : ");
+		int harga=Integer.parseInt(br.readLine());
+		//banyak pesanan tiket
+		System.out.println("Banyak pesan tiket :");
+		int pesan=Integer.parseInt(br.readLine());
+
+		
+		//hasil inputan
+		System.out.println("=======================================");
+		System.out.println("         Data Tiket Pesawat            ");
+		System.out.println("=======================================");
+		System.out.println();
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("|	KodePenerbangan |     Rute         | harga      | Pesawat   |");
+		System.out.println("|	1.SBY-JKT       | Surabaya-jakarta | Rp 500000  | Air Asia  |");
+		System.out.println("|	1.SMP-JKT       | Sumenep-jakarta  | Rp 900000  | Air Asia  |");
+		System.out.println("|	1.BLI-JKT       | Bali-jakarta     | Rp 700000  | Air Asia  |");
+		System.out.println("|	1.SBY-BLI       | Surabaya-Bali    | Rp 500000  | Air Asia  |");
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println("Nama Pemesan :" +namadepan+""+namabelakang);
+		System.out.println("usia :" +usia+ "tahun");
+		System.out.println("Jenis Pesawat :" +pesawat);
+		System.out.println("Penumpang yang bernama : "+namadepan+""+namabelakang);
+		System.out.println("Rute :"+rute);
+		System.out.println("harga : " +harga);
+		System.out.println("Banyak pesan tiket :"+pesan);
+		System.out.println("Total bayar : "+(pesan*harga));
+		
+		
+		System.out.println("============================================");
+		System.out.println("    Terima kasih atas pembelian tiket anda  ");
+		System.out.println("============================================");
+
+		}
+}
