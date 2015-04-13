@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class While1{
+	public static void main (String args []){
+		Scanner ea = new Scanner (System.in);
+		System.out.print ("Masukkan Jumlah Data = ");
+		
+		int max = 0;
+		int min = 99;
+		double rata_rata = 0.0;
+		
+		int jumlah = ea.nextInt ();
+		int sum = 0;
+		int count = 0;
+		while (count<jumlah){
+			sum += ea.nextInt ();
+			count++;	
+		}
+		
+		rata_rata = sum/(double)jumlah;
+				
+		System.out.println ("Hasil SUM = " +sum);
+		System.out.println ("Hasil RATA-RATA = " +rata_rata);
+		System.out.println ("Nilai MAX = " +max);
+		System.out.println ("Nilai MIN = " +min);
+	}
+}
