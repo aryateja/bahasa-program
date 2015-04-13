@@ -1,0 +1,18 @@
+import java.util.*;
+class randompadajava
+{
+public static void main (String [] args)
+{
+	Scanner ea = new Scanner (System.in);
+	System.out.print ("masukan banyak bilangan = ");
+	
+	int a = ea.nextInt  ();
+	int nilai;
+	
+	for(int i=0; i<0; i++)
+	{
+		nilai = (int) (Math.random()*10);
+		System.out.print(nilai);
+	}
+}
+} 
