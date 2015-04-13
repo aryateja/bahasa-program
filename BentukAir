@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class BentukAir{
+	public static void main (String args []){
+		Scanner ea = new Scanner (System.in);
+		System.out.print ("Masukan Tempratur Air (dalam celcius) = ");
+		
+		int tempAir = ea.nextInt ();
+		String bentuk ="";
+		
+		if ((tempAir >= 50) && (tempAir<0))
+			bentuk = "Padat";
+		else if ((tempAir >= 0) && (tempAir<50))
+			bentuk = "Cair";
+		else
+			bentuk = "Gas";
+		
+		System.out.println ("Air dalam suhu = " +tempAir);
+		System.out.println ("Dalam bentuk = " +bentuk);
+	}
+}
