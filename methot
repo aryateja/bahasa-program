@@ -1,0 +1,28 @@
+public class methot {
+	public static void cetakgaris ()
+	{
+		for (int i=0;i<25;i++)
+			System.out.print("=");
+		System.out.println();
+	}
+	public static void cetakgaris(int panjanggaris)
+	{
+		for (int i=0;i<panjanggaris;i++)
+			System.out.print("=");
+		System.out.println();
+	}
+	public static void cetakgaris(int panjanggaris, String bentuk)
+	{
+		for (int i=0;i<panjanggaris;i++)
+			System.out.print(bentuk);
+		System.out.println();
+	}
+	public static void main (String []args)
+	{
+		cetakgaris(10,"#");
+		System.out.println("viw data custemer");
+		cetakgaris(35);
+		System.out.println("alamat");
+		cetakgaris(45);
+	}
+}
