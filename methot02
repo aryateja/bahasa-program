@@ -1,0 +1,17 @@
+public class methot02
+{
+	public static int add(int a,int b)
+	{
+	int c=a+b;
+	return c;
+	}
+public static void main(String []argv)
+{
+	int bil1=0;
+	int bil2=0;
+	int hasill=add(100,300);
+	int hasil2=add(20,30);
+	System.out.println("hasil add(100,300):"+hasill);
+	System.out.println("hasil add(20,30):"+hasil2);
+}
+}
