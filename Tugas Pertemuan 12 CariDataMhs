@@ -1,0 +1,143 @@
+package pencarianmhs;
+import java.io.*;
+public class Pencarianmhs {
+    //maaf pak ini menyusul
+   //Carimahasiswa fix (dengan array 2d)
+    //insyaallah menyusul yang array
+	public static void main(String [] args) throws IOException{
+		
+		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+		int okee=0;
+		
+		String [][]datakelas = {
+			{"2018","08410100375","Purwanto",},
+			{"2010","10410100146","Noer Hidayat"},
+			{"2010","10410100162","Sandy Perdana"},
+			{"2011","11410100142","Himawan Pradipta Utama"},
+			{"2012","12410100049","Sujatmiko Hadinugroho"},
+			{"2012","12410100070","Denny Kusuma"},
+			{"2012","12410100088","Mochammad Afri Fitriansyah"},
+			{"2012","12410100131","Pradita Satria Prima"},
+			{"2012","12410100159","Fajriyan Nurli"},
+			{"2012","12410100160","Hazvi Fahlevi"},
+			{"2013","13410100006","Nico Stephanus Kuncoro"},
+			{"2013","13410100007","Ramdhani Kurniawan"},
+			{"2013","13410100048","Alanvianto Mukti Tamtomo"},
+			{"2013","13410100049","Satryo Widodo"},
+			{"2013","13410100058","Khamim Ahsanu Amala"},
+			{"2013","13410100060","Arfiansyah Agma"},
+			{"2013","13410100061","Candra Dwi Prasetya"},
+			{"2013","13410100069","Mohammad Rangga Nurcahyo"},
+			{"2013","13410100083","Raymond Andreas Soebijantoro"},
+			{"2013","13410100153","Dwiki Rizwan Nizar"},
+			{"2013","13410100155","Anggy Pranindya Sudarmadji"},
+			{"2013","13410100157","Wahyu Alfiyanda"},
+			{"2013","13410100180","Rayana Suryatama"},
+			{"2013","13410100190","Bryan Asril Zani"},
+			{"2013","13410100192","Eko Amiyantho"},
+			{"2013","13410100200","Kristin Lebdaningrum"},
+			{"2013","13410100206","RB. Nuriana Alim Putra"},
+			{"2013","13410100216","Sabdo Wicaksono Putra"},
+			{"2014","14410100170","Rizky Akbar"},
+			{"2014","14410100172","Abdul Haris"},
+			{"2014","14410100173","Ach Nofal Kurniawan"},
+			{"2014","14410100174","Andri Anggara"},
+			{"2014","14410100175","Auda Rizqi Aulany"},
+			{"2014","14410100176","Noppy Wahyono Suwoto"},
+			{"2014","14410100177","Arya Teja"},
+			{"2014","14410100178","Nuari Imas Masita"},
+			{"2014","14410100179","Afif Lutfian Fahmi Chudlori"},
+			{"2014","14410100181","Novita Perdani"},
+			{"2014","14410100182", "Dheta Amelya Kurniawendy"},
+			{" "," "," "}
+		};
+		do{
+			System.out.println ("");
+			System.out.println ("==========================");
+			System.out.println (" DATA PENCARIAN MAHASISWA ");
+			System.out.println ("==========================");
+			System.out.println ("");
+			System.out.println ("1. Cari Data Mahasiswa Dengan NIM ");
+			System.out.println ("2. Cari Data Mahasiswa Dengan NAMA ");
+			System.out.println ("3. Pencarian Mahasiswa Dengan Memasukkan Angkatan Mahasiswa");
+			System.out.println ("4. Delete Mahasiswa ");
+			System.out.println ("5. Lihat Semua Data Mahasiswa");
+			System.out.println ("6. Keluar");
+			System.out.print ("Silahkan masukkan pilihan anda (1 s/d 6) : ");
+			int piluser = Integer.parseInt(br.readLine());
+			
+			switch(piluser){
+				case 1 :
+					System.out.print("Input Nim : ");
+					String nim=br.readLine();
+					okee=0;
+					for(int k =0;k<datakelas.length;k++){
+						if(datakelas[k][1].equals(nim)){
+							System.out.println();
+							System.out.println(datakelas[k][1]+"  "+ datakelas[k][2] );
+							System.out.println();
+							System.out.println("Pada data ke "+k);
+							okee=1;
+							break;
+						}
+					}
+					if(okee==0){
+						System.out.println("Data tidak ditemukan!");
+					}
+					break;
+				case 2 : 
+					System.out.print("Input Nama : ");
+					String nama=br.readLine();
+					okee=0;
+					for(int k =0;k<datakelas.length;k++){
+						if(datakelas[k][2].equalsIgnoreCase(nama)){
+							System.out.println();
+							System.out.println(datakelas[k][1]+"  "+ datakelas[k][2] );
+							System.out.println();
+							System.out.println("Pada data ke "+k);
+							okee=1;
+							break;
+						}
+					}
+					if(okee==0){
+						System.out.println("Data tidak ditemukan!");
+					}
+					break;
+				case 3 : 
+						System.out.print("Input Tahun Angkatan : ");
+					String angkatan=br.readLine();
+					for(int k =0;k<datakelas.length;k++){
+						if(datakelas[k][0].equals(angkatan)){
+							System.out.println(datakelas[k][1]+"  "+ datakelas[k][2] );
+						}
+					}
+					break;
+				case 4 :
+					System.out.print("Input Nim : ");
+					String nimhapus=br.readLine();
+					okee=0;
+					for(int k =0;k<datakelas.length;k++){
+						if(datakelas[k][1].equals(nimhapus)){
+							okee=k;
+							break;
+						}
+					}
+					
+					for(int m = okee; m<datakelas.length-1; m++){
+						datakelas[m][0]=datakelas[m+1][0];
+						datakelas[m][1]=datakelas[m+1][1];
+						datakelas[m][2]=datakelas[m+1][2];
+					}
+					break;
+				case 5 : 
+					for(int i = 0; i<datakelas.length; i++){
+						System.out.println(datakelas[i][0]+"   "+datakelas[i][1]+"  "+ datakelas[i][2] );
+					}
+					break;
+				case 6 : 
+					System.exit(0);
+					break;
+			}
+		}while(true);
+	}
+}
